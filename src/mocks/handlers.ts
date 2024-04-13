@@ -1,10 +1,11 @@
 import { fakeData } from './fakeData';
 import { rest } from 'msw';
 
-import type { ApiResponse } from '@/types/ApiResponse';
+import type { ApiResponse } from '@/schemas/ApiResponse';
+import type { z } from 'zod';
 
 export const handlers = [
-  rest.get<ApiResponse>('/api/portfolio', (req, res, ctx) => {
+  rest.get<z.infer<typeof ApiResponse>>('/api/portfolio', (req, res, ctx) => {
     // RESAS API で定義されている必須のクエリパラメータ
     // 参考: https://opendata.resas-portal.go.jp/docs/api/v1/regionalEmploy/analysis/portfolio.html
     const prefCode = req.url.searchParams.get('prefCode');
