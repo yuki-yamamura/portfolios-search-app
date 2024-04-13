@@ -2,7 +2,7 @@
 
 RESAS API から取得したデータをもとに、地域ごとの求人・求職者を検索できます。
 
-## ローカルマシン上で動かす方法
+## ローカルマシンで動かす方法
 
 1. [RESAS API](https://opendata.resas-portal.go.jp/) に登録して、API キーを取得する。
 2. 当リポジトリを Git でクローンして、プロジェクトのフォルダーに移動する。
@@ -19,7 +19,7 @@ git clone https://github.com/yuki-yamamura/portfolios-search-app.git
 cd portfolios-search-app
 
 # step 3
-echo 'API_KEY=XXXXXX' > .env
+echo 'API_KEY=<YOUR_API_KEY>' > .env
 
 # step 4
 npm install
@@ -41,11 +41,8 @@ API_KEY=XXXXXX
 - スタイリング: CSS Modules (Dart Sass)
 - React 周辺ライブラリ:
   - データ取得: SWR
-  - フォームの状態管理: React Hook Form
+  - フォームバリデーション: React Hook Form
+- スキーマバリデーション: Zod
 - コード検証: ESLint、Prettier、Stylelint
 - テスト: Jest、React Testing Library
-- デプロイ環境: Firebase
-
-```
-
-```
+- デプロイ環境: Vercel
