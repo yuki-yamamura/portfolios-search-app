@@ -1,6 +1,6 @@
 import type { PortFolioApiResponseType } from '@/schemas/portfolioApiResponseSchema';
 
-export const fakeData: PortFolioApiResponseType[] = [
+export const fakePortfolios: PortFolioApiResponseType[] = [
   {
     message: null,
     result: {

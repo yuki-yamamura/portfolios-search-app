@@ -1,10 +1,11 @@
-import { fakeData } from './fakeData';
+import { fakePortfolios } from '@/mocks/fakeData/fakePortfolios';
 import { rest } from 'msw';
 
 import type { PortFolioApiResponseType } from '@/schemas/portfolioApiResponseSchema';
 
-export const handlers = [
-  rest.get<PortFolioApiResponseType>('/api/portfolio', (req, res, ctx) => {
+export const portfolio = rest.get<PortFolioApiResponseType>(
+  '/api/portfolio',
+  (req, res, ctx) => {
     // RESAS API で定義されている必須のクエリパラメータ
     // 参考: https://opendata.resas-portal.go.jp/docs/api/v1/regionalEmploy/analysis/portfolio.html
     const prefCode = req.url.searchParams.get('prefCode');
@@ -12,7 +13,7 @@ export const handlers = [
     const matter = req.url.searchParams.get('matter');
     const category = req.url.searchParams.get('class');
 
-    const fakePortfolio = fakeData.find(({ result }) => {
+    const fakePortfolio = fakePortfolios.find(({ result }) => {
       return (
         result.prefCode === prefCode &&
         result.year === year &&
@@ -33,5 +34,5 @@ export const handlers = [
     }
 
     return res(ctx.json(fakePortfolio));
-  }),
-];
+  },
+);
