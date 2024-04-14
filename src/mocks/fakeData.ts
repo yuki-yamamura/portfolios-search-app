@@ -1,7 +1,6 @@
-import type { SuccessApiResponse } from '@/schemas/ApiResponse';
-import type z from 'zod';
+import type { PortFolioApiResponseType } from '@/schemas/portfolioApiResponseSchema';
 
-export const fakeData: z.infer<typeof SuccessApiResponse>[] = [
+export const fakeData: PortFolioApiResponseType[] = [
   {
     message: null,
     result: {
