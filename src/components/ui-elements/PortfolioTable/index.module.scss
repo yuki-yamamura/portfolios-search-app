@@ -1,0 +1,26 @@
+.module {
+  width: 100%;
+  max-width: 30rem;
+  overflow-x: auto;
+}
+
+.row {
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--grey);
+  }
+}
+
+.header {
+  font-weight: 400;
+  text-align: start;
+}
+
+.quantity {
+  text-align: end;
+}
+
+.header,
+.category,
+.quantity {
+  padding: 1rem;
+}
