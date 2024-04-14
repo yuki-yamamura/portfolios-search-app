@@ -1,0 +1,14 @@
+.module {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+.label > * {
+  display: inline;
+  cursor: pointer;
+}
+
+.radio {
+  margin-right: 0.5rem;
+}
