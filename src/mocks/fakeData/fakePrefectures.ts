@@ -1,4 +1,6 @@
-export const fakePrefectures = {
+import type { PrefecturesApiResponseType } from '@/schemas/prefecturesApiResponseSchema';
+
+export const fakePrefectures: PrefecturesApiResponseType = {
   message: null,
   result: [
     {
