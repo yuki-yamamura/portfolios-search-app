@@ -1,9 +1,9 @@
 import { withZod } from '@/lib/nextjs';
-import { SuccessApiResponse } from '@/schemas/ApiResponse';
+import { portfolioApiResponseSchema } from '@/schemas/portfolioApiResponseSchema';
 import axios from 'axios';
 import { z } from 'zod';
 
-import type { ApiResponse } from '@/schemas/ApiResponse';
+import type { PortFolioApiResponseType } from '@/schemas/portfolioApiResponseSchema';
 
 const handler = withZod(
   z.object({
@@ -15,7 +15,7 @@ const handler = withZod(
     }),
   }),
   async (req, res) => {
-    const { data } = await axios.get<z.infer<typeof ApiResponse>>(
+    const { data } = await axios.get<PortFolioApiResponseType>(
       'https://opendata.resas-portal.go.jp/api/v1/regionalEmploy/analysis/portfolio',
       {
         headers: {
@@ -24,7 +24,7 @@ const handler = withZod(
         params: req.query,
       },
     );
-    const { success } = SuccessApiResponse.safeParse(data);
+    const { success } = portfolioApiResponseSchema.safeParse(data);
 
     if (success) {
       res.json(data);

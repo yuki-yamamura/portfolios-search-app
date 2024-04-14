@@ -1,10 +1,8 @@
 :root {
-  --white: #fff;
-  --blue: #06f;
-  --grey: #626c7f;
-  --light-grey: #f4f6fa;
-}
-
-body {
-  color: var(--blue);
+  --white: hsl(0deg 0% 100%);
+  --blue: hsl(219deg 100% 50%);
+  --light-blue: hsl(219deg 100% 89%);
+  --grey: hsl(210deg 3% 73%);
+  --dark-grey: hsl(0deg 1% 27%);
+  --light-grey: hsl(220deg 38% 97%);
 }

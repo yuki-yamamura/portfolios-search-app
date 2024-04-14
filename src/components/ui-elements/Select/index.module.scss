@@ -1,0 +1,47 @@
+.module {
+  position: relative;
+  max-width: 15rem;
+  border: 1px solid var(--grey);
+  border-radius: 6px;
+
+  .label {
+    position: absolute;
+    top: -0.5rem;
+    left: 1rem;
+    padding-inline: 0.25rem;
+    font-size: 0.75rem;
+    color: var(--grey);
+    background-color: var(--white);
+  }
+
+  &:focus,
+  &[aria-expanded='true'] {
+    border: 2px solid var(--blue);
+    outline-color: var(--blue);
+
+    .label {
+      color: var(--blue);
+    }
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.25rem;
+  padding-left: 1rem;
+}
+
+.popperWrapper {
+  position: absolute;
+  top: 2.75rem;
+  left: -2px;
+  z-index: 10;
+
+  // Select コンポーネントが並列に並んだとき、下の要素を隠す様に幅を調整する。
+  width: 104%;
+  background-color: var(--white);
+}
