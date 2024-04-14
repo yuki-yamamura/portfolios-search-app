@@ -1,0 +1,16 @@
+.module {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.25rem;
+}
+
+.label {
+  font-size: 0.875rem;
+  color: var(--grey);
+}
