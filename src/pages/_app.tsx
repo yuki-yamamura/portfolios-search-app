@@ -1,3 +1,4 @@
+import RootLayout from '@/components/layouts/RootLayout';
 import { Inter } from 'next/font/google';
 
 import type { AppProps } from 'next/app';
@@ -12,7 +13,9 @@ const inter = Inter({
 
 const App = ({ Component, pageProps }: AppProps) => (
   <div className={inter.className}>
-    <Component {...pageProps} />
+    <RootLayout>
+      <Component {...pageProps} />
+    </RootLayout>
   </div>
 );
 

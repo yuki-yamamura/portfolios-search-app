@@ -1,3 +1,5 @@
-const Page = () => <h1>Hello, World!</h1>;
+import HomeScreen from '@/screens/HomeScreen';
+
+const Page = () => <HomeScreen />;
 
 export default Page;

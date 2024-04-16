@@ -8,13 +8,13 @@ type Props = {
 
 const PortfolioTable = ({ portfolios }: Props) => (
   <table className={styles.module}>
-    <thead>
+    <thead className={styles.headers}>
       <tr className={styles.row}>
         <th className={styles.header}>職業分類名</th>
         <th className={styles.header}>求人・求職者数</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody className={styles.body}>
       {portfolios.map(({ broadName, value }) => (
         <tr key={broadName} className={styles.row}>
           <td className={styles.category}>{broadName}</td>
