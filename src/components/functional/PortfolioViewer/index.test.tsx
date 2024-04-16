@@ -21,7 +21,7 @@ describe('PortfolioViewer', () => {
       ).not.toBeChecked();
 
       // データの初期値
-      const rows = screen.getAllByRole<HTMLTableRowElement>('row');
+      const rows = await screen.findAllByRole<HTMLTableRowElement>('row');
       const firstRow = rows.at(0);
       const secondRow = rows.at(1);
 
@@ -64,7 +64,7 @@ describe('PortfolioViewer', () => {
       await user.click(screen.getByRole('option', { name: '青森県' }));
 
       // assert
-      const rows = screen.getAllByRole<HTMLTableRowElement>('row');
+      const rows = await screen.findAllByRole<HTMLTableRowElement>('row');
       expect(
         within(rows[1]).getByRole('cell', { name: '82,587人' }),
       ).toBeInTheDocument();
