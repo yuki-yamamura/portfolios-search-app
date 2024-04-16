@@ -1,0 +1,29 @@
+.module {
+  color: var(--blue);
+  animation: spin 0.75s linear infinite;
+
+  &[data-size='small'] {
+    width: 14px;
+    height: 14px;
+  }
+
+  &[data-size='medium'] {
+    width: 20px;
+    height: 20px;
+  }
+
+  &[data-size='large'] {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

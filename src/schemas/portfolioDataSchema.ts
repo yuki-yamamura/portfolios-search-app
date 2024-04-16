@@ -5,7 +5,7 @@ export const portfolioDataSchema = z.object({
   broadName: z.string(),
   middleCode: z.string(),
   middleName: z.string(),
-  value: z.number(),
+  value: z.number().nullable(),
 });
 
-export type PortfolioDataType = z.infer<typeof portfolioDataSchema>[];
+export type PortfolioDataType = z.infer<typeof portfolioDataSchema>;

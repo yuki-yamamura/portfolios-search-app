@@ -1,0 +1,25 @@
+@use '@/styles/mixins' as *;
+
+.module {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  width: 100%;
+  margin-inline: auto;
+
+  @include media(md) {
+    flex-direction: row;
+    column-gap: 2.5rem;
+  }
+}
+
+.table {
+  width: 100%;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
