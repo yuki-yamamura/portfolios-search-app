@@ -1,4 +1,5 @@
 import PortfolioViewer from '.';
+import { fakePrefectures } from '@/mocks/fakeData/fakePrefectures';
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -6,7 +7,7 @@ describe('PortfolioViewer', () => {
   describe('初期化', () => {
     test('フォームに適切な初期値が設定されており、それに応じた求人・求職者のデータを表示する', async () => {
       // arrange, act
-      render(<PortfolioViewer />);
+      render(<PortfolioViewer prefectures={fakePrefectures.result} />);
 
       // assert
       // フォームの初期値
@@ -57,7 +58,7 @@ describe('PortfolioViewer', () => {
     test('フォーム内のフィールドが更新された場合、それに応じた求人・求職者のデータを表示する', async () => {
       // arrange
       const user = userEvent.setup();
-      render(<PortfolioViewer />);
+      render(<PortfolioViewer prefectures={fakePrefectures.result} />);
 
       // act
       await user.click(await screen.findByText('北海道'));
