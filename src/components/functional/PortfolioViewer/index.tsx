@@ -2,13 +2,17 @@ import PortfolioForm from '../PortfolioForm';
 import Loading from '@/components/ui-elements/Loading';
 import PortfolioTable from '@/components/ui-elements/PortfolioTable';
 import { usePortfoliosWithFilter } from '@/hooks/usePortfoliosWithFilter';
-import { usePrefectures } from '@/hooks/usePrefectures';
 
 import type { PortfolioFormType } from '@/schemas/portfolioFormSchema';
+import type { PrefectureType } from '@/schemas/prefectureSchema';
 
 import styles from './index.module.scss';
 
-const PortfolioViewer = () => {
+type Props = {
+  prefectures: PrefectureType[];
+};
+
+const PortfolioViewer = ({ prefectures }: Props) => {
   const defaultValues: PortfolioFormType = {
     prefCode: '1',
     year: '2012',
@@ -16,18 +20,11 @@ const PortfolioViewer = () => {
     class: '1',
   };
 
-  const { prefectures, isLoading: isEveryPrefecturesLoading } =
-    usePrefectures();
   const {
     portfolios: portfolios,
     isLoading,
     updateFilterConditions,
   } = usePortfoliosWithFilter(defaultValues);
-
-  // データ取得にそれほど時間がかからないので、fallback UI ではなく null を返す。
-  if (isEveryPrefecturesLoading) {
-    return null;
-  }
 
   return (
     <div className={styles.module}>
