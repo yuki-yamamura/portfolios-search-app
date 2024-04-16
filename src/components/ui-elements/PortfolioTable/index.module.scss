@@ -1,12 +1,19 @@
 .module {
   width: 100%;
-  max-width: 30rem;
   overflow-x: auto;
 }
 
-.row {
-  &:not(:last-child) {
+.headers {
+  .row {
     border-bottom: 1px solid var(--grey);
+  }
+}
+
+.body {
+  .row {
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--grey);
+    }
   }
 }
 
