@@ -3,7 +3,7 @@ import type { PortfolioDataType } from '@/schemas/portfolioDataSchema';
 import styles from './index.module.scss';
 
 type Props = {
-  portfolios: PortfolioDataType;
+  portfolios: PortfolioDataType[];
 };
 
 const PortfolioTable = ({ portfolios }: Props) => (
@@ -18,7 +18,10 @@ const PortfolioTable = ({ portfolios }: Props) => (
       {portfolios.map(({ broadName, value }) => (
         <tr key={broadName} className={styles.row}>
           <td className={styles.category}>{broadName}</td>
-          <td className={styles.quantity}>{`${value.toLocaleString()}人`}</td>
+          {/* "分類不能の職業" が null を返すため、とりあえず 0 人とする。 */}
+          <td className={styles.quantity}>{`${
+            value?.toLocaleString() ?? '0'
+          }人`}</td>
         </tr>
       ))}
     </tbody>
